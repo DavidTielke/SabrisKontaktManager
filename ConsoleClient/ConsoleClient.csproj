@@ -64,9 +64,21 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\CoCo.Core 2.0 Beta3\CoCo.Core.Prototyp\CoCo.Core.Contract\CoCo.Core.Contract.csproj">
+      <Project>{1CCACA70-E8CD-434F-B84F-83348ECB30A7}</Project>
+      <Name>CoCo.Core.Contract</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\CoCo.Core 2.0 Beta3\CoCo.Core.Prototyp\CoCo.Core.NinjectAdapter\CoCo.Core.NinjectAdapter.csproj">
+      <Project>{15C3C4EF-4C31-4547-95E4-9CB37714EE87}</Project>
+      <Name>CoCo.Core.NinjectAdapter</Name>
+    </ProjectReference>
     <ProjectReference Include="..\DataClasses\DataClasses.csproj">
       <Project>{F51A5424-0A8A-4191-9ED8-F70BBAAF9F24}</Project>
       <Name>DataClasses</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DataStoring.Contract\DataStoring.Contract.csproj">
+      <Project>{E4CC50AD-0BBE-4405-AC2B-BC7F5B532183}</Project>
+      <Name>DataStoring.Contract</Name>
     </ProjectReference>
     <ProjectReference Include="..\Mappings\Mappings.csproj">
       <Project>{DA50A557-0983-4FE8-8DF3-E6076304B7CB}</Project>

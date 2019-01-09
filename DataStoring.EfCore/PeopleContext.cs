@@ -8,7 +8,7 @@ using DavidTielke.PersonManagerCoCo.Data.DataStoring.EfCore.Mappings;
 
 namespace DavidTielke.PersonManagerCoCo.Data.DataStoring.EfCore
 {
-    public class PeopleContext : DbContext
+    internal class PeopleContext : DbContext
     {
         public PeopleContext()
         {

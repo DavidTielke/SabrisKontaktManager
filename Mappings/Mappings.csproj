@@ -51,6 +51,26 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\CoCo.Core 2.0 Beta3\CoCo.Core.Prototyp\CoCo.Core.Bootstrapping\CoCo.Core.Bootstrapping.csproj">
+      <Project>{24E2B8AD-E27F-4956-A0CE-BEB64491F6A4}</Project>
+      <Name>CoCo.Core.Bootstrapping</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\CoCo.Core 2.0 Beta3\CoCo.Core.Prototyp\CoCo.Core.Configuration.DatabaseSource\CoCo.Core.Configuration.DatabaseSource.csproj">
+      <Project>{8822ECB9-4C6C-4A6B-BCF8-C26D255262DD}</Project>
+      <Name>CoCo.Core.Configuration.DatabaseSource</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\CoCo.Core 2.0 Beta3\CoCo.Core.Prototyp\CoCo.Core.Configuration\CoCo.Core.Configuration.csproj">
+      <Project>{90A4A0D9-22FD-48F8-B633-FBF093D2AC76}</Project>
+      <Name>CoCo.Core.Configuration</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\CoCo.Core 2.0 Beta3\CoCo.Core.Prototyp\CoCo.Core.Contract\CoCo.Core.Contract.csproj">
+      <Project>{1CCACA70-E8CD-434F-B84F-83348ECB30A7}</Project>
+      <Name>CoCo.Core.Contract</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\CoCo.Core 2.0 Beta3\CoCo.Core.Prototyp\CoCo.Core.EventBrokerage\CoCo.Core.EventBrokerage.csproj">
+      <Project>{98F1CBEE-6118-44E3-BE73-A150DC505C64}</Project>
+      <Name>CoCo.Core.EventBrokerage</Name>
+    </ProjectReference>
     <ProjectReference Include="..\DataStoring.Contract\DataStoring.Contract.csproj">
       <Project>{E4CC50AD-0BBE-4405-AC2B-BC7F5B532183}</Project>
       <Name>DataStoring.Contract</Name>

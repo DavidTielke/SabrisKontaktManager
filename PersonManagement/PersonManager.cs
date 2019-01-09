@@ -1,33 +1,44 @@
-﻿using System.Collections.Generic;
-using System.Linq;
+﻿using CoCo.Core.Contract.Configuration;
 using DavidTielke.PersonManagerCoCo.CrossCutting.DataClasses;
 using DavidTielke.PersonManagerCoCo.Data.DataStoring.Contract;
 using DavidTielke.PersonManagerCoCo.Logic.PersonManagement.Contract;
 using DavidTielke.PersonManagerCoCo.Logic.PersonManagement.Contract.DataClasses;
+using System.Linq;
 
 namespace DavidTielke.PersonManagerCoCo.Logic.PersonManagement
 {
-    public class PersonManager : IPersonManager
+    internal class PersonManager : IPersonManager
     {
         private readonly IRepository<Person> _repository;
+        private readonly PersonManagementConfiguration _config;
 
-        public PersonManager(IRepository<Person> repository)
+        public PersonManager(IRepository<Person> repository,
+            PersonManagementConfiguration config)
         {
             _repository = repository;
+            this._config = config;
+            _config = config;
         }
 
-        public IQueryable<Person> GetAllAdults() => _repository
-            .Query
-            .Where(p => p.Age >= 18);
-
-        public IQueryable<Person> GetAllChildren() => _repository
-            .Query
-            .Where(p => p.Age < 18);
-
-        public AgeStatistic GetAgeStatistic() => new AgeStatistic
+        public IQueryable<Person> GetAllAdults()
         {
-            AmountAdults = GetAllAdults().Count(),
-            AmountChilden = GetAllChildren().Count()
-        };
+            return _repository.Query.Where(p => p.Age >= _config.AgeThreshold);
+        }
+
+        public IQueryable<Person> GetAllChildren()
+        {
+            return _repository.Query.Where(p => p.Age < _config.AgeThreshold);
+        }
+
+        public AgeStatistic GetAgeStatistic()
+        {
+            return new AgeStatistic
+            {
+                AmountAdults = GetAllAdults().Count(),
+                AmountChilden = GetAllChildren().Count()
+            };
+        }
+
+        public void Add(Person person) => _repository.Insert(person);
     }
 }

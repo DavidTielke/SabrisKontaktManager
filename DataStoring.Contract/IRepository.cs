@@ -7,5 +7,8 @@ namespace DavidTielke.PersonManagerCoCo.Data.DataStoring.Contract
         where TEntity : class
     {
         IQueryable<TEntity> Query { get; }
+        void Insert(TEntity entity);
+        void Update(TEntity entity);
+        void Delete(int id);
     }
 }

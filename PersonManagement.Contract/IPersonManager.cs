@@ -10,5 +10,6 @@ namespace DavidTielke.PersonManagerCoCo.Logic.PersonManagement.Contract
         IQueryable<Person> GetAllAdults();
         IQueryable<Person> GetAllChildren();
         AgeStatistic GetAgeStatistic();
+        void Add(Person person);
     }
 }
