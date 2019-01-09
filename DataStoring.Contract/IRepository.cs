@@ -1,9 +1,11 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 
 namespace DavidTielke.PersonManagerCoCo.Data.DataStoring.Contract
 {
     public interface IRepository<TEntity>
+        where TEntity : class
     {
-        List<TEntity> Query { get; }
+        IQueryable<TEntity> Query { get; }
     }
 }

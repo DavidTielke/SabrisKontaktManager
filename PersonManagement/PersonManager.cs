@@ -9,22 +9,20 @@ namespace DavidTielke.PersonManagerCoCo.Logic.PersonManagement
 {
     public class PersonManager : IPersonManager
     {
-        private readonly IPersonRepository _repository;
+        private readonly IRepository<Person> _repository;
 
-        public PersonManager(IPersonRepository repository)
+        public PersonManager(IRepository<Person> repository)
         {
             _repository = repository;
         }
 
-        public List<Person> GetAllAdults() => _repository
+        public IQueryable<Person> GetAllAdults() => _repository
             .Query
-            .Where(p => p.Age >= 18)
-            .ToList();
+            .Where(p => p.Age >= 18);
 
-        public List<Person> GetAllChildren() => _repository
+        public IQueryable<Person> GetAllChildren() => _repository
             .Query
-            .Where(p => p.Age < 18)
-            .ToList();
+            .Where(p => p.Age < 18);
 
         public AgeStatistic GetAgeStatistic() => new AgeStatistic
         {

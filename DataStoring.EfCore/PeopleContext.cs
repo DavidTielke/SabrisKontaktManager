@@ -12,6 +12,7 @@ namespace DavidTielke.PersonManagerCoCo.Data.DataStoring.EfCore
     {
         public PeopleContext()
         {
+            Database.Log += m => Console.WriteLine(m);
             Database.Connection.ConnectionString = @"Data Source=(localdb)\mssqllocaldb;Initial Catalog=SabrisKontaktManager;Integrated Security=True";
         }
 

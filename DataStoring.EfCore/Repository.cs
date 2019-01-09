@@ -7,8 +7,16 @@ using DavidTielke.PersonManagerCoCo.Data.DataStoring.Contract;
 
 namespace DavidTielke.PersonManagerCoCo.Data.DataStoring.EfCore
 {
-    class Repository<TEntity> : IRepository<TEntity>
+    public class Repository<TEntity> : IRepository<TEntity> 
+        where TEntity : class
     {
-        public List<TEntity> Query { get; }
+        private readonly PeopleContext _db;
+
+        public Repository(PeopleContext db)
+        {
+            _db = db;
+        }
+
+        public IQueryable<TEntity> Query => _db.Set<TEntity>();
     }
 }

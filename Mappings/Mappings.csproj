@@ -59,6 +59,10 @@
       <Project>{F38F8577-D1B1-467C-AF75-8F4FF8065243}</Project>
       <Name>DataStoring.CSV</Name>
     </ProjectReference>
+    <ProjectReference Include="..\DataStoring.EfCore\DataStoring.EfCore.csproj">
+      <Project>{C06A9C2F-1179-43B9-9056-A569DE8DE4AC}</Project>
+      <Name>DataStoring.EfCore</Name>
+    </ProjectReference>
     <ProjectReference Include="..\PersonManagement.Contract\PersonManagement.Contract.csproj">
       <Project>{A09A867E-87A4-40C9-8F18-AF8AFF6839D8}</Project>
       <Name>PersonManagement.Contract</Name>
